@@ -32,10 +32,10 @@ class Solution(object):
         stripped_s = re.sub(r'\W','',s)
         print(stripped_s)
         
-        j = -1
+        j = len(stripped_s) - 1
         i = 0 
         
-        while i>j: 
+        while i < j: 
             
             if stripped_s[i] != stripped_s[j]:
                 return False 
@@ -43,3 +43,5 @@ class Solution(object):
                 i = i + 1
                 j = j - 1
         return True
+
+    
