@@ -24,3 +24,22 @@ class Solution(object):
                 
         return True
         
+class Solution(object):
+    def isPalindrome(self, s):
+        
+        # lowercase and remove all non-alphanumeric characters
+        s = s.lower()
+        stripped_s = re.sub(r'\W','',s)
+        print(stripped_s)
+        
+        j = -1
+        i = 0 
+        
+        while i>j: 
+            
+            if stripped_s[i] != stripped_s[j]:
+                return False 
+            else: 
+                i = i + 1
+                j = j - 1
+          return True
