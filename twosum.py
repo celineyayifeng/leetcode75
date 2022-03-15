@@ -7,11 +7,11 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        sortnums = sorted(nums)
+        sortnums = sorted(nums) # O(nlogn)
         min_ind = 0
         max_ind = len(sortnums) - 1
 
-        while sortnums[min_ind] + sortnums[max_ind] != target:
+        while sortnums[min_ind] + sortnums[max_ind] != target:  # O(n)
             if sortnums[min_ind] + sortnums[max_ind] < target:
                 min_ind += 1
             elif sortnums[min_ind] + sortnums[max_ind] > target:
@@ -27,7 +27,26 @@ Solution #2
     
 class Solution(object):
   def twoSum(self, nums, target):
-    for i in range(len(nums)): 
+    for i in range(len(nums)): # O(n)
       new = target - nums[i]
-      if new in nums and nums.index(new) != i:
+      if new in nums and nums.index(new) != i: # O(n)
         return [i, nums.index(new)]
+
+    # space complexity is O(1)
+    
+    
+Solution #3
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        
+        index = {}
+        for i in range(len(nums)):
+            new = target- nums[i]
+            
+            if new in index:  # O(1)
+                return [i, index[new]]
+            
+            index[nums[i]] = i
+            
+   # space complexity is O(n)
