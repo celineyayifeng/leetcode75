@@ -28,8 +28,8 @@ class Solution(object):
     def isPalindrome(self, s):
         
         # lowercase and remove all non-alphanumeric characters
-        s = s.lower()
-        stripped_s = re.sub(r'\W','',s)
+        s_lower = s.lower()
+        stripped_s = re.sub(r'\W','',s_lower)
         print(stripped_s)
         
         j = len(stripped_s) - 1
