@@ -26,16 +26,15 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
+
         min_buy = prices[0]
-        old_profit = 0
-        new_profit = 0
+        profit = 0
         for i in range(1,len(prices)):
             if prices[i] > min_buy: 
-                new_profit = max(old_profit, prices[i]-min_buy)
-                old_profit = new_profit 
+                profit = max(profit, prices[i]-min_buy)
             else:
                 min_buy = prices[i]
-        return new_profit 
+        return profit 
     
 Solution #3
 
