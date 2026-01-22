@@ -10,3 +10,9 @@ class Solution:
                 return count
         return count
 
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        actual_sum = sum(range(0, len(nums)+1))
+        missing_sum = sum(nums)
+        return actual_sum - missing_sum
+
