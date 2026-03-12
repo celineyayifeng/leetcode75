@@ -1,0 +1,23 @@
+class Solution:
+  def lengthOfLongestSubstringTwoDistinct(self, s: str) -> int:
+    N = len(s)
+
+    counter = collections.Counter()
+
+    best =  0
+    left = 0
+
+    for right in range(N):
+      counter[s[right]] += 1
+
+      while len(counter) > 2: 
+        counter[s[left]] -= 1 
+
+        if counter[s[left]] == 0:
+          del counter[s[left]]
+
+        left += 1
+
+      best = max(best, right - left + 1) 
+
+  return best 
